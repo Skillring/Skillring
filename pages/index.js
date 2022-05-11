@@ -17,3 +17,5 @@ function Flow({ nodes, edges, onNodesChange, onEdgesChange, onConnect }) {
     </ReactFlow>
   );
 }
+
+export default Flow;

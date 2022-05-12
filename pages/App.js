@@ -1,55 +1,41 @@
-//TODO work out how to show this on the index.js
+import { useState } from 'react';
+import ReactFlow from 'react-flow-renderer';
 
-import React from 'react';
-import ReactFlow, {
-  addEdge,
-  MiniMap,
-  Controls,
-  Background,
-  useNodesState,
-  useEdgesState,
-} from 'react-flow-renderer';
 
-import { nodes as initialNodes, edges as initialEdges } from './initial-elements';
+const initialNodes = [
+  {
+    id: '1',
+    type: 'input',
+    data: { label: 'Input Node' },
+    position: { x: 250, y: 25 },
+  },
 
-const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
+  {
+    id: '2',
+    // you can also pass a React component as a label
+    data: { label: <div>Default Node</div> },
+    position: { x: 100, y: 125 },
+  },
+  {
+    id: '3',
+    type: 'output',
+    data: { label: 'Output Node' },
+    position: { x: 250, y: 250 },
+  },
+];
 
-const OverviewFlow = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const onConnect = (params) => setEdges((eds) => addEdge(params, eds));
+const initialEdges = [
+  { id: 'e1-2', source: '1', target: '2' },
+  { id: 'e2-3', source: '2', target: '3', animated: true },
+];
 
-  return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnect={onConnect}
-      onInit={onInit}
-      fitView
-      attributionPosition="top-right"
-    >
-      <MiniMap
-        nodeStrokeColor={(n) => {
-          if (n.style?.background) return n.style.background;
-          if (n.type === 'input') return '#0041d0';
-          if (n.type === 'output') return '#ff0072';
-          if (n.type === 'default') return '#1a192b';
+function Flow() {
+  const [nodes, setNodes] = useState(initialNodes);
+  const [edges, setEdges] = useState(initialEdges);
+  
 
-          return '#eee';
-        }}
-        nodeColor={(n) => {
-          if (n.style?.background) return n.style.background;
 
-          return '#fff';
-        }}
-        nodeBorderRadius={2}
-      />
-      <Controls />
-      <Background color="#aaa" gap={16} />
-    </ReactFlow>
-  );
-};
+  return <ReactFlow nodes={nodes} edges={edges} fitView />;
+}
 
-export default OverviewFlow;
+export default Flow;

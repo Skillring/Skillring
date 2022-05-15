@@ -1,0 +1,57 @@
+Why to use NextJS over ReactJS
+How to use React 
+What is a component?
+How to make a component 
+How to use a component
+--- Lesson start ---
+Make repository
+use vercel
+Using program called "Fork"
+Clone the repo
+Open folder in VScode
+Looking at the code
+on the right is 2 folders
+and
+a couple of files
+ignore the read me
+Package .jason
+fundamental for all dev is this file
+main focus is on "Scripts" section
+when we dev, we use the start script
+go to terminal
+we are missing react currently
+npm install
+(installs the dependancies and other things)
+Public folder is the publicly available files
+It's not a place for code
+src directory 
+Contains the code
+app.css
+app.js
+index.css
+index.js
+entry point of any project is index
+index is equivalent to main()
+reactDOM you never have to worry about, but it's where react runs
+_
+npm run start
+Then
+inside app.js
+just muting if audio is bad
+No questions 🙂
+Hot
+Can you save this app.js file?
+Ref app1.js
+Const [Variable Name] = [something]
+E.g. 
+const name = "Sam"
+To reference the variable we do:
+{name}
+using "let" instead of "const" allows for the variable to be changed
+Ref app2.js
+Silver Serpent Ring — Today at 1:22 PM
+Ref app3.js
+changed the onclick to be a function
+Back in a sec
+npm install styled-components
+ref app4.js (colour)

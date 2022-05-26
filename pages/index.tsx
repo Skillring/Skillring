@@ -1,25 +1,5 @@
-import ReactFlow, { MiniMap, Controls } from 'react-flow-renderer';
+import ReactFlow, { MiniMap, Controls, Node,  Edge } from 'react-flow-renderer';
 import styled from 'styled-components';
-
-
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-
-// Create a <Wrapper> react component that renders a <section> with
-// some padding and a papayawhip background
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
-
-// Use them like any other React component – except they're styled!
-<Wrapper>
-  <Title>Hello World, this is my first styled component!</Title>
-</Wrapper>
 
 
 const onNodeDragStop = (_: MouseEvent, node: Node) => console.log('drag stop', node);
